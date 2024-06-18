@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.6.4'  // Apply Spring Boot plugin
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+group = 'com.example.demo'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '11'
+targetCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web' // Add Spring Boot starter for web applications
+    testImplementation 'org.springframework.boot:spring-boot-starter-test' // Add Spring Boot starter for testing
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'mysql:mysql-connector-java'
+    implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
+    implementation 'com.hazelcast:hazelcast:5.4.0'
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
